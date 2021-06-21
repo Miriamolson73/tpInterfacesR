@@ -11,21 +11,24 @@ const Traducir = ({ traducciones,cargarTraduccion,traducirFrase,cargarElegida}) 
       
       
       console.log(eleccion);
-      const titulo = traducirFrase.length === 0 ? 'Seleccionar Tarjeta a Traducir' : 'tarjeta elegida';
+      
     return ( 
         <Fragment >
           <div >
             {traducirFrase.length === 0 
-            ? ('Seleccionar Tarjeta a Traducir' : 'tarjeta elegida';
+            ? (<p>Seleccionar Tarjeta a Traducir</p>)
+             :
+             (
             
-          {titulo}
-            <p className="text-sm text-gray-500"> frase numero {traducciones[eleccion].id} {titulo}</p>
+             <div>
+            <p className="text-sm text-gray-500"> frase numero {traducciones[eleccion].id} </p>
             <p>{traducciones[eleccion].traduccion}</p> 
-            
+            </div>
+             )
           
 
          
-     
+          }        
          
             </div> 
   
