@@ -1,5 +1,5 @@
 import React ,{ useState,useEffect, Fragment}from 'react';
-
+import ipsum from "./images/ipsum.png";
 import lorem1 from "./images/lorem1.png";
 import lorem2 from "./images/lorem2.jpg";
 import Traducir from './components/Traducir';
@@ -102,14 +102,22 @@ function App () {
     
       <li> 
       
-      <img src={lorem2} className="w-60 h-32  mx-auto"  alt="" width="384" height="600"/>
+      <img src={ipsum} className="w-60 h-32  mx-auto border border-purple-200 hover:border-transparent focus:outline-none"  alt="" width="384" height="600"/>
+       
+  
+       
+    
+      </li>
+      <li> 
+      
+      <img src={lorem2} className="w-60 h-32  mx-auto border border-purple-200 hover:border-transparent focus:outline-none"  alt="" width="384" height="600"/>
        
   
        
     
       </li>
       <li>
-        <img src={lorem1} className="w-60 h-32 rounded-full mx-auto"  alt="" width="384" height="600"/>
+        <img src={lorem1} className="w-60 h-32 rounded-full mx-auto border border-purple-200 hover:border-transparent focus:outline-none "  alt="" width="384" height="600"/>
              
       </li>
     </ul>

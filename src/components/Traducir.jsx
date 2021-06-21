@@ -16,7 +16,7 @@ const Traducir = ({ traducciones,cargarTraduccion,traducirFrase,cargarElegida}) 
         <Fragment >
           <div >
             {traducirFrase.length === 0 
-            ? (<p>Seleccionar Tarjeta a Traducir</p>)
+            ? (<p className="text-sm text-gray-900">Seleccionar frase a Traducir</p>)
              :
              (
             
