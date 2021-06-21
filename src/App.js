@@ -23,7 +23,14 @@ function App () {
     
     
   ]);
-  // const [frasesElegidas,cargarElegida]=useState([])
+  
+
+  const [traducirFrase,cargarElegida]=useState([]);
+  const  elegido = props => {
+    cargarElegida(props)
+  }
+ 
+  
   
   // const nuevasFrases = frase.filter(elegidas => frase.id ===1);
   // cargarElegida (nuevasFrases);
@@ -75,6 +82,7 @@ function App () {
    
  
    }
+   
     useEffect(() =>{
          consultarAPI();
          //cargarFrases()
@@ -125,6 +133,9 @@ function App () {
         <Traducir
          traducciones={traducciones}
          cargarTraduccion={cargarTraduccion}
+         traducirFrase={traducirFrase}
+         cargarElegida={cargarElegida}
+
          />
         </div> 
         </li>
@@ -142,6 +153,7 @@ function App () {
                  fraseCinco={fraseCinco}
                 fraseSeis={fraseSeis}
               fraseSiete={fraseSiete}
+              elegido={elegido}
                 
                              /> 
                      </div>
