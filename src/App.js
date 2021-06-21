@@ -149,7 +149,7 @@ function App () {
         </li>
      
         <li class="flex justify-center  gap-10 mt-5"> 
-           <div className="grid grid-cols-3 gap-2"> 
+           <div className="grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-2 lg:grid-cols-3 lg:gap-2  "> 
         <Frase
                
              
@@ -159,6 +159,7 @@ function App () {
                fraseTres={fraseTres}
                fraseCuatro={fraseCuatro}
                  fraseCinco={fraseCinco}
+                 
                 fraseSeis={fraseSeis}
               fraseSiete={fraseSiete}
               elegido={elegido}
