@@ -4,6 +4,7 @@ import lorem1 from "./images/lorem1.png";
 import lorem2 from "./images/lorem2.jpg";
 import Traducir from './components/Traducir';
 import Frase from './components/Frase';
+import Encabezado from './components/Encabezado';
 import './index.css';
 
 
@@ -43,8 +44,8 @@ function App () {
     const [fraseTres,setFrase3]= useState({});
     const [fraseCuatro,setFrase4]=useState({});
     const [fraseCinco,setFrase5]=useState({});
-    const [fraseSeis,setFrase6]=useState({});
-    const [fraseSiete,setFrase7]=useState({});
+  
+   
   const url='https://jsonplaceholder.typicode.com/photos';
   
 
@@ -59,11 +60,7 @@ function App () {
     const api = await fetch(url);
    
     const frase = await api.json();
-   // const nuevasFrases = frase.filter(elegidas => elegidas.id === 1); 
-    
-   // console.log(frase);
-
-    //setFrase(frase);
+   
     
     setFrase0(frase[0]);
    setFrase1(frase[1]);
@@ -71,8 +68,8 @@ function App () {
    setFrase3(frase[3]);
    setFrase4(frase[4]);
    setFrase5(frase[5]);
-   setFrase6(frase[6]);
-   setFrase7(frase[7]);
+   
+
    
    
     }
@@ -85,7 +82,7 @@ function App () {
    
     useEffect(() =>{
          consultarAPI();
-         //cargarFrases()
+         
         
        },[]);
        
@@ -97,80 +94,49 @@ function App () {
   
   return (
     <Fragment >
-    <div > 
-    <ul className="flex justify-center flex-grid-row px-5 gap-20 mt-5"> 
-    
-      <li> 
-      
-      <img src={ipsum} className="w-60 h-32  mx-auto border border-purple-200 hover:border-transparent focus:outline-none"  alt="" width="384" height="600"/>
-       
-  
-       
-    
-      </li>
-      <li> 
-      
-      <img src={lorem2} className="w-60 h-32  mx-auto border border-purple-200 hover:border-transparent focus:outline-none"  alt="" width="384" height="600"/>
-       
-  
-       
-    
-      </li>
-      <li>
-        <img src={lorem1} className="w-60 h-32 rounded-full mx-auto border border-purple-200 hover:border-transparent focus:outline-none "  alt="" width="384" height="600"/>
-             
-      </li>
-    </ul>
-
-      
+      <div > 
+        <Encabezado
+            ipsum={ipsum}
+            lorem2={lorem2}
+            lorem1={lorem1}
+            />
      
-    <ul >
+       <ul >
         <li class="flex justify-center mt-2">
           <div className="container 
             text-center font-bold text-xl bg-blue-400 hover:bg-blue-200  border-2 rounded  border-blue-500">
-        
-            
+               
             Traducción de frase elegida 
-
-           
-           </div>
+          </div>
         </li>
-        <li class="flex justify-center  ">
-        <div  className="container
-         text-center  bg-blue-400 hover:bg-blue-200  border-2 rounded mx-30 mt-2 border-blue-500 " onClick="function()">
-        <Traducir
-         traducciones={traducciones}
-         cargarTraduccion={cargarTraduccion}
-         traducirFrase={traducirFrase}
-         cargarElegida={cargarElegida}
 
-         />
-        </div> 
+        <li class="flex justify-center  ">
+          <div  className="container
+         text-center  bg-blue-400 hover:bg-blue-200  border-2 rounded mx-30 mt-2 border-blue-500 " >
+            <Traducir
+            traducciones={traducciones}
+            cargarTraduccion={cargarTraduccion}
+            traducirFrase={traducirFrase}
+            cargarElegida={cargarElegida}
+            />
+          </div> 
         </li>
      
         <li class="flex justify-center  gap-10 mt-5"> 
            <div className="grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-2 lg:grid-cols-3 lg:gap-2  "> 
-        <Frase
-               
-             
+              <Frase
                 fraseCero={fraseCero}
                 fraseUno={fraseUno}
-               fraseDos={fraseDos}
-               fraseTres={fraseTres}
-               fraseCuatro={fraseCuatro}
-                 fraseCinco={fraseCinco}
-                 
-                fraseSeis={fraseSeis}
-              fraseSiete={fraseSiete}
-              elegido={elegido}
-                
-                             /> 
-                     </div>
-        
+                fraseDos={fraseDos}
+                fraseTres={fraseTres}
+                fraseCuatro={fraseCuatro}
+                fraseCinco={fraseCinco}
+                elegido={elegido}/> 
+            </div>
         </li>   
-      </ul> 
-      </div>   
-      </Fragment>
+    </ul> 
+    </div>   
+    </Fragment>
  
   );
   }  
