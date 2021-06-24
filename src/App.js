@@ -26,6 +26,7 @@ function App () {
   ]);
   
 
+
   const [traducirFrase,cargarElegida]=useState([]);
   const  elegido = props => {
     cargarElegida(props)
@@ -49,8 +50,8 @@ function App () {
   const url='https://jsonplaceholder.typicode.com/photos';
   
 
-
- 
+  
+  
  
   const consultarAPI = async () => {
     try{
@@ -58,8 +59,10 @@ function App () {
   
 
     const api = await fetch(url);
+    console.log(api);
    
     const frase = await api.json();
+ 
    
     
     setFrase0(frase[0]);
@@ -68,6 +71,7 @@ function App () {
    setFrase3(frase[3]);
    setFrase4(frase[4]);
    setFrase5(frase[5]);
+   console.log(frase);
    
 
    
