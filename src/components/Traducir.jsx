@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import '../index.css';
 
 
@@ -6,8 +6,22 @@ import '../index.css';
 
 
 
-const Traducir = ({ traducciones,cargarTraduccion,traducirFrase,cargarElegida}) => {
+const Traducir = ({ traducirFrase,cargarElegida}) => {
       const eleccion=traducirFrase;
+      const [traducciones,cargarTraduccion]= useState([
+        {id:0, traduccion:" طويل وهي أن المحتوى المقرنوء لصفحة ما سيلهي القارئ عن"},
+        {id:1, traduccion:" سى الشكل الخاتوضع الفقرات في الصفحة ال "},
+        {id:2, traduccion:" ى المقرنوء لصفحة ما سيلهي ابسوم لأنها تعطي توزيعاَ طبيعياَ "},
+        {id:3, traduccion:" طويل وهي أن المحتوى المقرنوء لصفحة ما سيلهي القارئ عن"},
+        {id:4, traduccion:" سى الشكل الخاتوضع الفقرات في الصفحة ال "},
+        {id:5, traduccion:" ى المقرنوء لصفحة ما سيلهي ابسوم لأنها تعطي توزيعاَ طبيعياَ "},
+        {id:6, traduccion:" طويل وهي أن المحتوى المقرنوء لصفحة ما سيلهي القارئ عن"},
+        {id:7, traduccion:" سى الشكل الخاتوضع الفقرات في الصفحة ال "},
+        {id:8, traduccion:" ى المقرنوء لصفحة ما سيلهي ابسوم لأنها تعطي توزيعاَ طبيعياَ "},
+        {id:9, traduccion:" سى الشكل الخاتوضع الفقرات في الصفحة ال "},
+        
+        
+      ]);
       
       
       console.log(eleccion);
